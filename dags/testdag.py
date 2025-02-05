@@ -13,7 +13,7 @@ with DAG(
         "start_date": datetime(2024, 1, 1),
         "retries": 1,
     },
-    schedule_interval="@daily",
+    schedule_interval="* * * *",
     catchup=False,
 ) as dag:
     
