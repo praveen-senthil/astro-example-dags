@@ -1,7 +1,3 @@
-from airflow import DAG
-from airflow.operators.python import PythonOperator
-from datetime import datetime
-
 def test1():
     print("Hello, World!")
 
@@ -13,12 +9,12 @@ with DAG(
         "start_date": datetime(2024, 1, 1),
         "retries": 1,
     },
-    schedule_interval="* * * *",
+    schedule_interval="* * * *",  # Runs every 1 minute
     catchup=False,
 ) as dag:
     
     task_hello = PythonOperator(
-        task_id="hello",
+        task_id="print_hello",
         python_callable=test1,
     )
 
