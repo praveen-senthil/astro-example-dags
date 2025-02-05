@@ -9,7 +9,7 @@ with DAG(
         "start_date": datetime(2024, 1, 1),
         "retries": 1,
     },
-    schedule_interval="* * * *",  # Runs every 1 minute
+    schedule_interval="* * * * *",  # Runs every 1 minute
     catchup=False,
 ) as dag:
     
