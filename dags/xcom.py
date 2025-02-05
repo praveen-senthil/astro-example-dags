@@ -10,7 +10,7 @@ def pull_value_from_xcom(**kwargs):
     value = ti.xcom_pull(task_ids='push_value', key='my_number')
     print(f"Pulled value from XCom: {value}")
 with DAG(
-        'xcom_execution',
+        'xcom_executionn',
         schedule_interval='@once',
         start_date=datetime(2025, 4, 2),  # Corrected the argument name to `start_date`
         catchup=False
