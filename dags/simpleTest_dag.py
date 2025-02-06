@@ -10,13 +10,14 @@ def testing1():
 def testing2():
   print("Testing2...")
 
-with DAG(
-  dag_id = "simpleTest_dag",
-  default = {
+default = {
       "owner" : "airflow",
       "start_date" : datetime(2025, 6, 2),
       "retries" : 1
-  },
+  }
+
+with DAG(
+  dag_id = "simpleTest_dag",
   schedule_interval = '@daily',
   catchup = False
 ) as dag :
