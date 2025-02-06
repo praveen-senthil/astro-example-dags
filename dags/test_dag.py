@@ -14,7 +14,7 @@ with DAG(
   dag_id = "simpleTest_dag",
   default = {
       "owner" : "airflow",
-      "start_date" : datetime(2025, 02, 06),
+      "start_date" : datetime(2025, 6, 2),
       "retries" : 1
   },
   schedule_interval = '*/1 * * * *',
