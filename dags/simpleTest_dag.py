@@ -17,7 +17,7 @@ with DAG(
       "start_date" : datetime(2025, 6, 2),
       "retries" : 1
   },
-  schedule_interval = '*/1 * * * *',
+  schedule_interval = '@daily',
   catchup = False
 ) as dag :
         test1_task = PythonOperator(
