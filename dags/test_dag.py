@@ -11,13 +11,13 @@ def testing2():
   print("Testing2...")
 
 with DAG(
-  dag_id = "simpleTest_dag"
+  dag_id = "simpleTest_dag",
   default = {
       "owner" : "airflow",
       "start_date" : datetime(2025, 02, 06),
       "retries" : 1
   },
-  schedule_interval = '*/1 * * * *'
+  schedule_interval = '*/1 * * * *',
   catchup = False
 ) as dag :
         test1_task = PythonOperator(
@@ -26,7 +26,7 @@ with DAG(
         )
 
         test2_task = PythonOperator(
-          task_id = 'test2'
+          task_id = 'test2',
           python_callable = testing2
         )
 
